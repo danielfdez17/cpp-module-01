@@ -2,7 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <bits/stdc++.h>
+// #include <bits/stdc++.h>
 
 int main(int ac, char **av)
 {
@@ -21,27 +21,31 @@ int main(int ac, char **av)
 		return 1;
 	}
 	// ? read the content
-	while (getline(file, content))
-		std::cout << content << "\n";
+	std::string line;
+	while (getline(file, line))
+	{
+		content += line + "\n";
+		std::cout << line << "\n";
+	}
 	// ? search s1
-	// size_t size = content.size();
-	// for (size_t i = 0; i < size; ++i)
-	// {
-	// 	size_t s1_size = s1.size();
-	// 	size_t j;
-	// 	for (j = 0; j < s1_size; ++j)
-	// 		if (content[i] != s1[j])
-	// 			break;
-	// 	if (j == s1_size)
-	// 	{
-	// 		int aux = i;
-	// 		while (j--)
-	// 			content[aux--] = s2[j];
-	// 	}
-	// }
-	// ? replace s1 with s2
-	// ? write the content in other file
-
+	for (size_t i = 0; i <= content.size() - s1.size(); ++i)
+	{
+		size_t s1_size = s1.size();
+		size_t j;
+		for (j = 0; j < s1_size; ++j)
+			if (content[i + j] != s1[j])
+				break;
+		// ? replace s1 with s2
+		if (j == s1_size)
+		{
+			// ? write the content in other file
+			int replace_pos = i + s1_size - 1;
+			j = 0;
+			while (j < s2.size())
+				content[replace_pos++] = s2[j++];
+		}
+	}
+	// ? close the file
 	file.close();
 	return 0;
 }
