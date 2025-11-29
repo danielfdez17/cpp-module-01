@@ -47,6 +47,11 @@ fclean: clean
 re: fclean all
 	@echo "Rebuilding $(NAME)"
 
+run: all
+	@./$(NAME) file.txt hola ad #! mem leaks
+debug: all
+	@gdb ./$(NAME)
+
 .PHONY: all obj clean fclean re
 
 .DEFAULT_GOAL: all
