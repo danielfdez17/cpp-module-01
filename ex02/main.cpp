@@ -1,18 +1,27 @@
 #include <string>
 #include <iostream>
 
+#define RESET "\033[0m"
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define YELLOW "\033[33m"
+#define BLUE "\033[34m"
+#define MAGENTA "\033[35m"
+#define CYAN "\033[36m"
+#define WHITE "\033[37m"
+
 int main(void)
 {
 	std::string brain = "HI THIS IS BRAIN";
 	std::string *stringPTR = &brain;
 	std::string **stringREF = &stringPTR;
 
-	std::cout << &brain << "\n";
-	std::cout << stringPTR << "\n";
-	std::cout << stringREF << "\n";
+	std::cout << GREEN << &brain << "\n" RESET;
+	std::cout << YELLOW << stringPTR << "\n" RESET;
+	std::cout << CYAN << stringREF << "\n" RESET;
 
-	std::cout << brain << "\n";
-	std::cout << *stringPTR << "\n";
-	std::cout << **stringREF << "\n";
+	std::cout << GREEN << brain << "\n" RESET;
+	std::cout << YELLOW << *stringPTR << "\n" RESET;
+	std::cout << CYAN << **stringREF << "\n" RESET;
 	return 0;
 }
