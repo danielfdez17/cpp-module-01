@@ -1,4 +1,4 @@
-#include "Zombie.hpp"
+#include "../inc/Zombie.hpp"
 #include <iostream>
 
 Zombie::Zombie(std::string name)
@@ -14,7 +14,7 @@ Zombie::~Zombie(void)
 			  << name << ": destroyed...\n" RESET;
 }
 
-void Zombie::announce(void)
+void Zombie::announce(void) const
 {
 	std::cout << CYAN ""
 			  << name << ": BraiiiiiiinnnzzzZ...\n" RESET;

@@ -16,14 +16,18 @@
 class Zombie
 {
 private:
+	// * Attributes
 	std::string	name;
 
 public:
-	Zombie(std::string name);
-	~Zombie(void);
-	void	announce(void);
-	Zombie	*newZombie(std::string name);
-	void	randomChump(std::string name);
+	// * Constructor and Destructor
+			Zombie(std::string name);
+			~Zombie(void);
+
+	// * Member Functions
+	void	announce(void) const;
+	Zombie	*newZombie(std::string name) const;
+	void	randomChump(std::string name) const;
 };
 
 #endif // __ZOMBIE_H__
