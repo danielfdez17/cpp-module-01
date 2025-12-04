@@ -33,8 +33,11 @@ private:
 	static void			error(void);
 
 public:
-	Harl(void);
-	void		complain(std::string level);
+	// * Constructor
+				Harl(void);
+	
+	// * Public Methods
+	void		complain(const std::string level) const;
 
 };
 
