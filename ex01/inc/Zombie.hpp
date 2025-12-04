@@ -19,11 +19,14 @@ private:
 	std::string	name;
 
 public:
-	Zombie(void);
-	Zombie(std::string name);
-	~Zombie(void);
-	void	announce(void);
-	Zombie	*zombieHorde(int N, std::string name);
+	// * Constructors and Destructor
+			Zombie(void);
+			Zombie(std::string name);
+			~Zombie(void);
+
+	// * Member Functions
+	void	announce(void) const;
+	Zombie	*zombieHorde(int N, std::string name) const;
 };
 
 #endif // __ZOMBIE_H__
