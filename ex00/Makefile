@@ -1,3 +1,9 @@
+# * Colors
+GREEN = \033[0;32m
+YELLOW = \033[0;33m
+RED = \033[0;31m
+RESET = \033[0m
+
 # * Program name
 NAME = brainzzzzz
 
@@ -33,25 +39,25 @@ $(OBJ_DIR)%.o: $(BRAINZZZZZ_DIR)%.cpp
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(NAME): $(OBJS)
-	@echo "Compiling $(NAME)..."
+	@echo "$(GREEN)Compiling $(NAME)...$(RESET)"
 	@$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) -o $(NAME)
 
 all: obj $(NAME)
 
 obj:
-	clear
 	@mkdir -p $(OBJ_DIR)
 
 clean:
-	@echo "Removing object files..."
+	@echo "$(RED)Removing object files...$(RESET)"
 	@$(RM) $(OBJS)
 
 fclean: clean
-	@echo "Removing $(NAME)..."
+	@echo "$(RED)Removing $(NAME)...$(RESET)"
 	@$(RM) $(NAME)
 
-re: fclean all
-	@echo "Rebuilding $(NAME)"
+re:
+	@echo "$(YELLOW)Rebuilding $(NAME)$(RESET)"
+	@$(MAKE) --no-print-directory fclean all
 
 .PHONY: all obj clean fclean re
 

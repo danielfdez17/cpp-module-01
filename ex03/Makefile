@@ -39,7 +39,6 @@ $(NAME): $(OBJS)
 all: obj $(NAME)
 
 obj:
-	clear
 	@mkdir -p $(OBJ_DIR)
 
 clean:
