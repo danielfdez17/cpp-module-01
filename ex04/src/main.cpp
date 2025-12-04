@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "colors.hpp"
 // #include <bits/stdc++.h>
 
 void	replace(std::string &content, const std::string s1, const std::string s2)
@@ -22,7 +23,7 @@ void	replace(std::string &content, const std::string s1, const std::string s2)
 				break;
 		if (j == s1_size)
 		{
-			// ? write the content in other file
+			// ? s1 found at position i
 			int replace_pos = i;
 			j = 0;
 			if (s2_size > s1_size)
@@ -52,7 +53,7 @@ int main(int ac, char **av)
 {
 	if (ac != 4)
 	{
-		std::cerr << "Usage: " << av[0] << " <filename> <s1> <s2>\n";
+		std::cerr << RED "Usage: " << av[0] << " <filename> <s1> <s2>\n" RESET;
 		return 1;
 	}
 	std::string	filename	= av[1];
@@ -65,7 +66,7 @@ int main(int ac, char **av)
 	file.open(&filename[0], std::fstream::in);
 	if (!file.is_open())
 	{
-		std::cerr << "Error when opening the file " << filename << "\n";
+		std::cerr << RED "Error when opening the file " << filename << "\n" RESET;
 		return 1;
 	}
 
@@ -77,6 +78,9 @@ int main(int ac, char **av)
 	// ? close the file
 	file.close();
 
+	std::cout << CYAN "Beore writing to file " << filename + ".replace" << "\n" RESET;
+	std::cout << YELLOW << content << RESET;
+	
 	// ? replace s1 with s2 in content
 	replace(content, s1, s2);
 
@@ -85,9 +89,11 @@ int main(int ac, char **av)
 	outfile.open(& (filename + ".replace")[0], std::fstream::out);
 	if (!outfile.is_open())
 	{
-		std::cerr << "Error when opening the file " << filename + ".replace" << "\n";
+		std::cerr << RED "Error when opening the file " << filename + ".replace" << "\n" RESET;
 		return 1;
 	}
+	std::cout << GREEN "Writing to file " << filename + ".replace" << "\n" RESET;
+	std::cout << YELLOW << content << RESET;
 	// ? write the content to the new file
 	outfile << content;
 	// ? close the new file

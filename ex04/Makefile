@@ -15,6 +15,9 @@ CFLAGS += -fsanitize=address
 # * Removal
 RM = rm -rf
 
+# * Includes
+INCLUDES = -I ./inc/
+
 # * Objects dir
 OBJ_DIR = ./obj/
 
@@ -30,11 +33,11 @@ OBJS = $(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
 # ! RULES
 $(OBJ_DIR)%.o: $(REPLACE_DIR)%.cpp
 	@mkdir -p $(OBJ_DIR)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(INCLUDES) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
 	@echo "$(GREEN)Compiling $(NAME)...$(RESET)"
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) -o $(NAME)
 
 all: obj $(NAME)
 
