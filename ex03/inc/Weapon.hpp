@@ -16,14 +16,17 @@
 class Weapon
 {
 private:
+	// * Attributes
 	std::string	type;
 
 public:
-	Weapon(void);
-	Weapon(std::string type);
-	std::string getType(void);
-	void		setType(std::string type);
+	// * Constructor
+				Weapon(void);
+				Weapon(std::string type);
 
+	// * Member functions
+	std::string	getType(void) const;
+	void		setType(const std::string type);
 };
 
 #endif // __WEAPON__

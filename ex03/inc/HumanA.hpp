@@ -7,12 +7,16 @@
 class HumanA
 {
 private:
-	Weapon 		*weapon;
-	std::string name;
+	// * Attributes
+	Weapon		*weapon;
+	std::string	name;
 
 public:
-	HumanA(std::string name, Weapon *weapon);
-	void	attack(void);
+	// * Constructor
+			HumanA(std::string name, Weapon *weapon);
+
+	// * Member functions
+	void	attack(void) const;
 };
 
 #endif // __HUMAN_A__
