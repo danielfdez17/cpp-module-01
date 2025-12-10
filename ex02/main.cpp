@@ -10,18 +10,20 @@
 #define CYAN "\033[36m"
 #define WHITE "\033[37m"
 
+#define SHOW(a) std::cout << #a " :";
+
 int main(void)
 {
 	std::string brain = "HI THIS IS BRAIN";
 	std::string *stringPTR = &brain;
-	std::string **stringREF = &stringPTR;
+	std::string &stringREF = brain;
 
-	std::cout << GREEN << &brain << "\n" RESET;
-	std::cout << YELLOW << stringPTR << "\n" RESET;
-	std::cout << CYAN << stringREF << "\n" RESET;
+	std::cout << GREEN; SHOW(&brain); std::cout << &brain << "\n" RESET;
+	std::cout << YELLOW; SHOW(stringPTR); std::cout << stringPTR << "\n" RESET;
+	std::cout << CYAN; SHOW(&stringREF); std::cout << &stringREF << "\n" RESET;
 
-	std::cout << GREEN << brain << "\n" RESET;
-	std::cout << YELLOW << *stringPTR << "\n" RESET;
-	std::cout << CYAN << **stringREF << "\n" RESET;
+	std::cout << GREEN; SHOW(brain); std::cout << brain << "\n" RESET;
+	std::cout << YELLOW; SHOW(*stringPTR); std::cout << *stringPTR << "\n" RESET;
+	std::cout << CYAN; SHOW(stringREF); std::cout << stringREF << "\n" RESET;
 	return 0;
 }
