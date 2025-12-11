@@ -41,7 +41,7 @@ void	Harl::error(void)
 				<< RESET;
 }
 
-void		Harl::complain(std::string level)
+void		Harl::complain(const std::string &level) const
 {
 	for (sui i = 0; i < MAX_OPS; ++i)
 		if (level == map[i].key)

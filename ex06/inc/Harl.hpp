@@ -34,7 +34,7 @@ private:
 
 public:
 	Harl(void);
-	void		complain(std::string level);
+	void		complain(const std::string &level) const;
 
 };
 
