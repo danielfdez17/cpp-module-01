@@ -59,6 +59,11 @@ re:
 	@echo "$(YELLOW)Rebuilding $(NAME)$(RESET)"
 	@$(MAKE) --no-print-directory fclean all
 
+run: 
+	clear
+	$(MAKE) all --no-print-directory
+	./$(NAME)
+
 .PHONY: all obj clean fclean re
 
 .DEFAULT_GOAL: all
