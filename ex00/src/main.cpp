@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	Zombie zzombie("zzombie");
+	Zombie zzombie("Mike Wazombie");
 	zzombie.randomChump("random zombie");
 	Zombie *randomZombie = zzombie.newZombie("new zombie");
 	zzombie.announce();

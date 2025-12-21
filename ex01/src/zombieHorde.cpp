@@ -1,6 +1,6 @@
 #include "../inc/Zombie.hpp"
 
-Zombie *Zombie::zombieHorde(int N, std::string name) const
+Zombie *Zombie::zombieHorde(int N, std::string name)
 {
 	Zombie *zombies = new Zombie[N];
 

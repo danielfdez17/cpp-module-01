@@ -18,7 +18,7 @@ Zombie::~Zombie(void)
 			  << name << ": destroyed...\n" RESET;
 }
 
-void Zombie::announce(void) const
+void Zombie::announce(void)
 {
 	std::cout << CYAN ""
 			  << name << ": BraiiiiiiinnnzzzZ...\n" RESET;

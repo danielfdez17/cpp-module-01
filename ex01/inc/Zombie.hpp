@@ -25,8 +25,8 @@ public:
 			~Zombie(void);
 
 	// * Member Functions
-	void	announce(void) const;
-	Zombie	*zombieHorde(int N, std::string name) const;
+	void	announce(void);
+	Zombie	*zombieHorde(int N, std::string name);
 };
 
 #endif // __ZOMBIE_H__
