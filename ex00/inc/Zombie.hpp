@@ -25,9 +25,9 @@ public:
 			~Zombie(void);
 
 	// * Member Functions
-	void	announce(void) const;
-	Zombie	*newZombie(std::string name) const;
-	void	randomChump(std::string name) const;
+	void	announce(void);
+	Zombie	*newZombie(std::string name);
+	void	randomChump(std::string name);
 };
 
 #endif // __ZOMBIE_H__

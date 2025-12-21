@@ -61,7 +61,7 @@ re:
 
 run: 
 	clear
-	$(MAKE) all --no-print-directory
+	@$(MAKE) all --no-print-directory
 	./$(NAME)
 
 .PHONY: all obj clean fclean re
