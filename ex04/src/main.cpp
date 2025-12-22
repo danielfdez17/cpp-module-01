@@ -3,7 +3,8 @@
 #include <fstream>
 #include <string>
 #include "colors.hpp"
-// #include <bits/stdc++.h>
+
+const bool DEBUG = false;
 
 void	replace(std::string &content, const std::string s1, const std::string s2)
 {
@@ -21,14 +22,15 @@ void	replace(std::string &content, const std::string s1, const std::string s2)
 		for (j = 0; j < s1_size; ++j)
 			if (content[i + j] != s1[j])
 				break;
+		// ? s1 found at position i
 		if (j == s1_size)
 		{
-			// ? s1 found at position i
 			int replace_pos = i;
 			j = 0;
 			if (s2_size > s1_size)
 			{
 				content.resize(content_size + (s2_size - s1_size));
+				i += (s2_size - s1_size);
 				content_size = content.size();
 				// * move the content to the right to make space for s2
 				for (int k = content_size - 1; k >= replace_pos + s2_size; --k)
@@ -37,6 +39,7 @@ void	replace(std::string &content, const std::string s1, const std::string s2)
 			else if (s2_size < s1_size)
 			{
 				content.resize(content_size - (s1_size - s2_size));
+				i -= (s1_size - s2_size);
 				content_size = content.size();
 				// * move the content to the left to fill the gap left by s2
 				for (int k = replace_pos + s2_size; k < content_size; ++k)
@@ -44,7 +47,10 @@ void	replace(std::string &content, const std::string s1, const std::string s2)
 			}
 			// * copy s2 to the position of s1
 			while (j < s2_size)
+			{
 				content[replace_pos++] = s2[j++];
+				++i;
+			}
 		}
 	}
 }
@@ -78,8 +84,11 @@ int main(int ac, char **av)
 	// ? close the file
 	file.close();
 
-	std::cout << CYAN "Beore writing to file " << filename + ".replace" << "\n" RESET;
-	std::cout << YELLOW << content << RESET;
+	if (DEBUG)
+	{
+		std::cout << CYAN "Beore writing to file " << filename + ".replace" << "\n" RESET;
+		std::cout << YELLOW << content << RESET;
+	}
 	
 	// ? replace s1 with s2 in content
 	replace(content, s1, s2);
@@ -92,8 +101,11 @@ int main(int ac, char **av)
 		std::cerr << RED "Error when opening the file " << filename + ".replace" << "\n" RESET;
 		return 1;
 	}
-	std::cout << GREEN "Writing to file " << filename + ".replace" << "\n" RESET;
-	std::cout << YELLOW << content << RESET;
+	if (DEBUG)
+	{
+		std::cout << GREEN "Writing to file " << filename + ".replace" << "\n" RESET;
+		std::cout << YELLOW << content << RESET;
+	}
 	// ? write the content to the new file
 	outfile << content;
 	// ? close the new file

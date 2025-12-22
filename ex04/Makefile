@@ -58,7 +58,13 @@ re:
 
 # ! Automating/Debugging rules
 run: all
-	@./$(NAME) file.txt hola ad #! mem leaks
+	clear
+	./$(NAME) file.txt Lorem Ipsum 
+
+diff:
+	clear
+	diff file.txt file.txt.replace
+
 debug: all
 	@gdb ./$(NAME)
 
