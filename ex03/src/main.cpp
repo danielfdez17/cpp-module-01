@@ -8,7 +8,7 @@ int main(void)
 
 		HumanA bob("Bob", &club);
 		bob.attack();
-		club.setType("paraguas");
+		club.setType("umbrella");
 		bob.attack();
 	}
 	{
@@ -18,7 +18,7 @@ int main(void)
 		jim.attack();
 		jim.setWeapon(&club);
 		jim.attack();
-		club.setType("paraguas");
+		club.setType("umbrella");
 		jim.attack();
 	}
 	return 0;
