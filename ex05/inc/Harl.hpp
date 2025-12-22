@@ -13,11 +13,10 @@
 
 #include <string>
 
-const std::string DEBUG = "DEBUG";
-const std::string INFO = "INFO";
-const std::string WARNING = "WARNING";
-const std::string ERROR = "ERROR";
-
+const std::string DEBUG	=	"DEBUG";
+const std::string INFO =	"INFO";
+const std::string WARNING =	"WARNING";
+const std::string ERROR =	"ERROR";
 
 typedef struct s_pair
 {
