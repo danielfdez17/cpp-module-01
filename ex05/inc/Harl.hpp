@@ -13,6 +13,12 @@
 
 #include <string>
 
+const std::string DEBUG = "DEBUG";
+const std::string INFO = "INFO";
+const std::string WARNING = "WARNING";
+const std::string ERROR = "ERROR";
+
+
 typedef struct s_pair
 {
 	std::string	key;
@@ -34,10 +40,10 @@ private:
 
 public:
 	// * Constructor
-				Harl(void);
+						Harl(void);
 	
 	// * Public Methods
-	void		complain(const std::string level) const;
+	void				complain(std::string level);
 
 };
 

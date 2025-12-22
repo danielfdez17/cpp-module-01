@@ -3,13 +3,13 @@
 
 Harl::Harl(void)
 {
-	map[0].key = "debug";
+	map[0].key = DEBUG;
 	map[0].value = &Harl::debug;
-	map[1].key = "info";
+	map[1].key = INFO;
 	map[1].value = &Harl::info;
-	map[2].key = "warning";
+	map[2].key = WARNING;
 	map[2].value = &Harl::warning;
-	map[3].key = "error";
+	map[3].key = ERROR;
 	map[3].value = &Harl::error;
 }
 
@@ -41,7 +41,7 @@ void	Harl::error(void)
 				<< RESET;
 }
 
-void		Harl::complain(const std::string level) const
+void		Harl::complain(std::string level)
 {
 	for (sui i = 0; i < MAX_OPS; ++i)
 		if (level == map[i].key)
