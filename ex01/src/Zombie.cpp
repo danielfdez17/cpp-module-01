@@ -1,4 +1,4 @@
-#include "../inc/Zombie.hpp"
+#include "Zombie.hpp"
 #include <iostream>
 
 Zombie::Zombie(void)
