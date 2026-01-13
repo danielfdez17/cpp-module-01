@@ -9,7 +9,7 @@ NAME = replace
 
 # * Compilation
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 CFLAGS += -fsanitize=address
 
 # * Removal
@@ -68,6 +68,6 @@ diff:
 debug: all
 	@gdb ./$(NAME)
 
-.PHONY: all obj clean fclean re
+.PHONY: all obj clean fclean re run diff debug
 
 .DEFAULT_GOAL: all

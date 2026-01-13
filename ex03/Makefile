@@ -9,7 +9,7 @@ NAME = unnecessary_violence
 
 # * Compilation
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 CFLAGS += -fsanitize=address
 
 # * Removal
@@ -63,6 +63,6 @@ run: all
 	clear
 	./$(NAME)
 
-.PHONY: all obj clean fclean re
+.PHONY: all obj clean fclean re run
 
 .DEFAULT_GOAL: all

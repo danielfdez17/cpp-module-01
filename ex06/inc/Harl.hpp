@@ -18,18 +18,19 @@ const std::string INFO =	"INFO";
 const std::string WARNING =	"WARNING";
 const std::string ERROR =	"ERROR";
 
+typedef short unsigned int sui;
+
+const sui	MAX_OPS = 4;
+
 typedef struct s_pair
 {
 	std::string	key;
 	void		(*value)(void);
 } t_pair;
 
-typedef short unsigned int sui;
-
 class Harl
 {
 private:
-	static const sui	MAX_OPS = 4;
 	t_pair				map[MAX_OPS];
 
 	static void			debug(void);

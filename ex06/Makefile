@@ -9,7 +9,7 @@ NAME = harlFilter
 
 # * Compilation
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 CFLAGS += -fsanitize=address
 
 # * Removal
@@ -60,6 +60,8 @@ re:
 tests: all
 	clear
 	./$(NAME) debug
+	@echo ----------------------------------------
+	./$(NAME) "I am not sure how tired I am today..."
 	@echo ----------------------------------------
 	./$(NAME) DEBUG
 	@echo ----------------------------------------
